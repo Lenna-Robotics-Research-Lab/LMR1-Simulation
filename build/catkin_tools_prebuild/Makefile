@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild
+CMAKE_SOURCE_DIR = /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild
+CMAKE_BINARY_DIR = /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild/CMakeFiles /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild/CMakeFiles /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,4 +1,4 @@
-prefix=/home/erfan/Repositories/lmr-simulator/devel/.private/lenna_description
+prefix=/home/arian/Github_files/lmr-simulator/devel/.private/lenna_description
 
 Name: lenna_description
 Description: Description of lenna_description

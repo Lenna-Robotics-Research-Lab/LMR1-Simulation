@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/erfan/Repositories/lmr-simulator/install")
+  set(CMAKE_INSTALL_PREFIX "/home/arian/Github_files/lmr-simulator/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/erfan/Repositories/lmr-simulator/build/lenna_description/gtest/googletest/cmake_install.cmake")
+  include("/home/arian/Github_files/lmr-simulator/build/lenna_description/gtest/googletest/cmake_install.cmake")
 
 endif()
 

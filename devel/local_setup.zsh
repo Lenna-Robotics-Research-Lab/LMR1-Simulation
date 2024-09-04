@@ -1,1 +1,1 @@
-/home/erfan/Repositories/lmr-simulator/devel/.private/catkin_tools_prebuild/local_setup.zsh
+/home/arian/Github_files/lmr-simulator/devel/.private/catkin_tools_prebuild/local_setup.zsh

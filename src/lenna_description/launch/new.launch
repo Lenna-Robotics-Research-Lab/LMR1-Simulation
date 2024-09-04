@@ -1,0 +1,4 @@
+<launch>
+	<arg name="hello" default="$(find lenna_description)/worlds/lab_world_1.sdf"/>
+	<node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg hello)"/>
+</launch>

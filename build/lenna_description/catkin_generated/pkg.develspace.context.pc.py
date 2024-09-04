@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "geometry_msgs;roscpp;rospy;std_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "lenna_description"
-PROJECT_SPACE_DIR = "/home/erfan/Repositories/lmr-simulator/devel/.private/lenna_description"
+PROJECT_SPACE_DIR = "/home/arian/Github_files/lmr-simulator/devel/.private/lenna_description"
 PROJECT_VERSION = "1.0.0"
