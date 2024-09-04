@@ -5,8 +5,18 @@
     command="cat $(find lenna_description)/urdf/lenna_description.urdf" />
 
   <!-- LOAD AN EMPTY WORLD -->
-  <include
-    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <!-- <include
+  file="$(find gazebo_ros)/launch/empty_world.launch" /> -->
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find lenna_description)/worlds/turtlebot3_house.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
 
   <!-- MAKE A STATIC TRANSFORMS -->
   <node

@@ -67,14 +67,14 @@ set(catkin_tools_prebuild_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(catkin_tools_prebuild_SOURCE_PREFIX /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild)
-  set(catkin_tools_prebuild_DEVEL_PREFIX /home/arian/Github_files/lmr-simulator/devel/.private/catkin_tools_prebuild)
+  set(catkin_tools_prebuild_SOURCE_PREFIX /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild)
+  set(catkin_tools_prebuild_DEVEL_PREFIX /home/erfan/Repositories/lmr-simulator/devel/.private/catkin_tools_prebuild)
   set(catkin_tools_prebuild_INSTALL_PREFIX "")
   set(catkin_tools_prebuild_PREFIX ${catkin_tools_prebuild_DEVEL_PREFIX})
 else()
   set(catkin_tools_prebuild_SOURCE_PREFIX "")
   set(catkin_tools_prebuild_DEVEL_PREFIX "")
-  set(catkin_tools_prebuild_INSTALL_PREFIX /home/arian/Github_files/lmr-simulator/install)
+  set(catkin_tools_prebuild_INSTALL_PREFIX /home/erfan/Repositories/lmr-simulator/install)
   set(catkin_tools_prebuild_PREFIX ${catkin_tools_prebuild_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/arian/Github_files/lmr-simulator/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/erfan/Repositories/lmr-simulator/install/lib;/home/erfan/Repositories/lmr-simulator/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

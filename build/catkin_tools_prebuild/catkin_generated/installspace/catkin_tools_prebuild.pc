@@ -1,4 +1,4 @@
-prefix=/home/arian/Github_files/lmr-simulator/install
+prefix=/home/erfan/Repositories/lmr-simulator/install
 
 Name: catkin_tools_prebuild
 Description: Description of catkin_tools_prebuild

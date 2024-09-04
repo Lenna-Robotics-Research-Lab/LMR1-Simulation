@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
 # Source directory: /usr/src/googletest
-# Build directory: /home/arian/Github_files/lmr-simulator/build/catkin_tools_prebuild/gtest
+# Build directory: /home/erfan/Repositories/lmr-simulator/build/catkin_tools_prebuild/gtest
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

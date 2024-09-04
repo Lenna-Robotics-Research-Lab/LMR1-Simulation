@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/arian/Github_files/lmr-simulator/build/lenna_description")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/erfan/Repositories/lmr-simulator/build/lenna_description")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

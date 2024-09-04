@@ -67,14 +67,14 @@ set(lenna_description_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(lenna_description_SOURCE_PREFIX /home/arian/Github_files/lmr-simulator/src/lenna_description)
-  set(lenna_description_DEVEL_PREFIX /home/arian/Github_files/lmr-simulator/devel/.private/lenna_description)
+  set(lenna_description_SOURCE_PREFIX /home/erfan/Repositories/lmr-simulator/src/lenna_description)
+  set(lenna_description_DEVEL_PREFIX /home/erfan/Repositories/lmr-simulator/devel/.private/lenna_description)
   set(lenna_description_INSTALL_PREFIX "")
   set(lenna_description_PREFIX ${lenna_description_DEVEL_PREFIX})
 else()
   set(lenna_description_SOURCE_PREFIX "")
   set(lenna_description_DEVEL_PREFIX "")
-  set(lenna_description_INSTALL_PREFIX /home/arian/Github_files/lmr-simulator/install)
+  set(lenna_description_INSTALL_PREFIX /home/erfan/Repositories/lmr-simulator/install)
   set(lenna_description_PREFIX ${lenna_description_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/arian/Github_files/lmr-simulator/install/lib;/home/arian/Github_files/lmr-simulator/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/erfan/Repositories/lmr-simulator/install/lib;/home/erfan/Repositories/lmr-simulator/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

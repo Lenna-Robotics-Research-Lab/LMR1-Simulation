@@ -1,0 +1,4 @@
+<launch>
+  <arg name="sexy_esi" default="$(find lenna_description)/worlds/turtlebot3_house.world"/>
+  <node name="gazebo" pkg="gazebo_ros" type="gazebo" args="$(arg sexy_esi)"/>
+</launch>
