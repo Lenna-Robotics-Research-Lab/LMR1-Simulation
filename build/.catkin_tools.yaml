@@ -1,0 +1,6 @@
+devel_space: /home/erfan/Repositories/lmr-simulator/devel
+install: false
+install_space: /home/erfan/Repositories/lmr-simulator/install
+profile: default
+source_space: /home/erfan/Repositories/lmr-simulator/src
+workspace: /home/erfan/Repositories/lmr-simulator
