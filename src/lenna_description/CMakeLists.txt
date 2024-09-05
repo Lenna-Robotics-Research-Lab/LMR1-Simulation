@@ -19,6 +19,8 @@ catkin_package(CATKIN_DEPENDS
 	geometry_msgs
 	roscpp
 	rospy
+	sensor_msgs
+	nav_msgs
 	std_msgs
 )
 
