@@ -185,7 +185,7 @@ foreach(t ${lenna_description_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometry_msgs;roscpp;rospy;std_msgs")
+set(depends "geometry_msgs;roscpp;rospy;sensor_msgs;nav_msgs;std_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

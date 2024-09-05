@@ -5,4 +5,4 @@ Description: Description of lenna_description
 Version: 1.0.0
 Cflags: 
 Libs: -L${prefix}/lib 
-Requires: geometry_msgs roscpp rospy std_msgs
+Requires: geometry_msgs roscpp rospy sensor_msgs nav_msgs std_msgs
