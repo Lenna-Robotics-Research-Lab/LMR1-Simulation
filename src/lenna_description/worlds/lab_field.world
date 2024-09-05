@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <world name="sameilzadeh_lab_field">
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="wall_1">
+      <pose>0.75 0 0.75 0 0 0</pose>
+      <static>true</static>
+      <link name="wall_1_link">
+        <inertial>
+          <mass>100.0</mass>
+          <inertia>
+            <ixx>16.6666666667</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>16.6666666667</iyy>
+            <iyz>0.0</iyz>
+            <izz>16.6666666667</izz>
+          </inertia>
+        </inertial>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 4 1.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 4 1.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall_2">
+      <pose>-0.1 -0.65 0.25 0 0 0</pose>
+      <static>true</static>
+      <link name="wall_2_link">
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.166666666667</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.166666666667</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.166666666667</izz>
+          </inertia>
+        </inertial>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.01 0.75 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.01 0.75 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall_3">
+      <pose>0.25 0.2 0.25 0 0 1.05</pose>
+      <static>true</static>
+      <link name="wall_3_link">
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.166666666667</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.166666666667</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.166666666667</izz>
+          </inertia>
+        </inertial>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.01 0.75 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.01 0.75 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall_4">
+      <pose>-0.56 0.257 0.25 0 0 -1.31</pose>
+      <static>true</static>
+      <link name="wall_4_link">
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.166666666667</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.166666666667</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.166666666667</izz>
+          </inertia>
+        </inertial>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.01 1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.01 1 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall_5">
+      <pose>-1.045 -0.75 0.25 0 0 0</pose>
+      <static>true</static>
+      <link name="wall_5_link">
+        <inertial>
+          <mass>1.0</mass>
+          <inertia>
+            <ixx>0.166666666667</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>0.166666666667</iyy>
+            <iyz>0.0</iyz>
+            <izz>0.166666666667</izz>
+          </inertia>
+        </inertial>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.01 1.75 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.01 1.75 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="wall_6">
+      <pose>-0.25 -2.1 0.75 0 0 1.57</pose>
+      <static>true</static>
+      <link name="wall_6_link">
+        <inertial>
+          <mass>100.0</mass>
+          <inertia>
+            <ixx>16.6666666667</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>16.6666666667</iyy>
+            <iyz>0.0</iyz>
+            <izz>16.6666666667</izz>
+          </inertia>
+        </inertial>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 2.2 1.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 2.2 1.5</size>
+            </box>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+  </world>
+</sdf>
