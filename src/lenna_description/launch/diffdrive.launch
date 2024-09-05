@@ -2,7 +2,7 @@
   <arg name="model" default="$(find lenna_description)/urdf/lenna_description.urdf"/>
   <arg name="rvizconfig" default="$(find lenna_description)/rviz/urdf.rviz" />
 
-  <include file="$(find lenna_description)/launch/gazebo.launch" />
+  <include file="$(find lenna_description)/launch/lenna_lab.launch" />
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
 
