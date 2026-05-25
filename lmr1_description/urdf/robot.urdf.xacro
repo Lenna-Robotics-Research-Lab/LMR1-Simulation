@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<robot name="lmr1"
+       xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- instantiate macros and properties -->
+    <xacro:include filename="$(find lmr1_description)/urdf/common/properties.xacro"/>
+    <xacro:include filename="$(find lmr1_description)/urdf/common/inertials.xacro"/>
+    <xacro:include filename="$(find lmr1_description)/urdf/components/wheel.xacro"/>
+
+    <!-- instantiate fixed components -->
+    <xacro:include filename="$(find lmr1_description)/urdf/components/base.xacro"/>
+    <xacro:include filename="$(find lmr1_description)/urdf/components/caster.xacro"/>
+    <xacro:include filename="$(find lmr1_description)/urdf/components/sensors.xacro"/>
+
+    <!-- left wheel -->
+    <xacro:wheel
+        prefix="left"
+        parent="base_link"
+        xyz="0 ${wheel_offset_y} ${wheel_offset_z}"
+        rpy="-${PI/2} 0 0"
+        mesh_file="package://lmr1_description/meshes/wheel.dae"
+        axis="0 0 1"/>
+
+    <!-- right wheel -->
+    <xacro:wheel
+        prefix="right"
+        parent="base_link"
+        xyz="0 -${wheel_offset_y} ${wheel_offset_z}"
+        rpy="${PI/2} 0 0"
+        mesh_file="package://lmr1_description/meshes/wheel.dae"
+        axis="0 0 -1"/>
+
+    <gazebo>
+        <plugin name="diff_drive_controller"
+                filename="libgazebo_ros_diff_drive.so">
+
+            <!-- wheels -->
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+
+            <!-- geometry -->
+            <wheelSeparation>0.2</wheelSeparation>
+            <wheelDiameter>0.065</wheelDiameter>
+
+            <!-- limits -->
+            <maxWheelTorque>5</maxWheelTorque>
+            <maxWheelAcceleration>10</maxWheelAcceleration>
+
+            <!-- topics -->
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+
+            <!-- frames -->
+            <odometryFrame>odom</odometryFrame>
+            <robotBaseFrame>base_link</robotBaseFrame>
+
+            <!-- behavior -->
+            <publishWheelTF>true</publishWheelTF>
+            <publishTf>true</publishTf>
+            <publishWheelJointState>true</publishWheelJointState>
+
+            <!-- update -->
+            <updateRate>50</updateRate>
+
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="left_wheel_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+    </gazebo>
+
+    <gazebo reference="right_wheel_link">
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+    </gazebo>
+
+</robot>

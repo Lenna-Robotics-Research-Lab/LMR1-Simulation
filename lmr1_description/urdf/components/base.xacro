@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <link name="base_link">
+
+        <inertial>
+
+            <origin
+                xyz="${base_offset_x}
+                     ${base_offset_y}
+                     ${base_offset_z}"
+                rpy="0 0 0"/>
+
+            <mass value="${base_mass}"/>
+
+            <xacro:box_inertia
+                mass="${base_mass}"
+                length="${base_length}"
+                width="${base_width}"
+                height="${base_height}"/>
+
+        </inertial>
+
+        <!-- ======================== -->
+        <!-- Visual -->
+        <!-- ======================== -->
+
+        <visual>
+
+            <origin
+                xyz="${base_offset_x}
+                     ${base_offset_y}
+                     ${base_offset_z}"
+                rpy="0 0 0"/>
+
+            <geometry>
+
+                <mesh filename="package://lmr1_description/meshes/base.dae"/>
+
+            </geometry>
+
+        </visual>
+
+        <!-- ======================== -->
+        <!-- Collision -->
+        <!-- ======================== -->
+
+        <collision>
+
+            <origin
+                xyz="${base_offset_x}
+                     ${base_offset_y}
+                     ${base_offset_z}"
+                rpy="0 0 0"/>
+
+            <geometry>
+
+                <box size="${base_length}
+                           ${base_width}
+                           ${base_height}"/>
+
+            </geometry>
+
+        </collision>
+
+    </link>
+
+</robot>

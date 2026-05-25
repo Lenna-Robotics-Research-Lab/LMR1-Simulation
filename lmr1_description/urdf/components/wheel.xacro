@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="wheel"
+                 params="
+                 prefix
+                 parent
+                 xyz
+                 rpy
+                 mesh_file
+                 axis">
+
+        <!-- ======================== -->
+        <!-- Wheel Link -->
+        <!-- ======================== -->
+
+        <link name="${prefix}_wheel_link">
+
+            <!-- Inertial -->
+
+            <inertial>
+
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+
+                <mass value="${wheel_mass}"/>
+
+                <xacro:cylinder_inertia
+                    mass="${wheel_mass}"
+                    radius="${wheel_radius}"
+                    length="${wheel_width}"/>
+
+            </inertial>
+
+            <!-- Visual -->
+
+            <visual>
+
+                <origin xyz="0 0 0" rpy="0 -${PI/2} 0"/>
+
+                <geometry>
+                    <mesh filename="${mesh_file}"/>
+                </geometry>
+
+            </visual>
+
+            <!-- Collision -->
+
+            <collision>
+
+                <origin xyz="0 0 0"
+                        rpy="0 0 0"/>
+
+                <geometry>
+                    <cylinder
+                        radius="${wheel_radius}"
+                        length="${wheel_width}"/>
+                </geometry>
+
+            </collision>
+
+        </link>
+
+        <!-- ======================== -->
+        <!-- Wheel Joint -->
+        <!-- ======================== -->
+
+        <joint name="${prefix}_wheel_joint"
+               type="continuous">
+
+            <origin xyz="${xyz}"
+                    rpy="${rpy}"/>
+
+            <parent link="${parent}"/>
+            <child link="${prefix}_wheel_link"/>
+
+            <axis xyz="${axis}"/>
+
+        </joint>
+
+    </xacro:macro>
+
+</robot>

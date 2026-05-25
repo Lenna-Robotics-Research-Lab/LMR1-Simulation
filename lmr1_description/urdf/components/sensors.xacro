@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- ======================== -->
+    <!-- IMU -->
+    <!-- ======================== -->
+
+    <link name="imu_link"/>
+
+    <joint name="imu_joint"
+           type="fixed">
+
+        <origin
+            xyz="${imu_offset_x}
+                 ${imu_offset_y}
+                 ${imu_offset_z}"
+            rpy="0 0 0"/>
+
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+
+    </joint>
+
+    <!-- ======================== -->
+    <!-- LiDAR -->
+    <!-- ======================== -->
+
+    <link name="lidar_link"/>
+
+    <joint name="lidar_joint"
+           type="fixed">
+
+        <origin
+            xyz="${lidar_offset_x}
+                 ${lidar_offset_y}
+                 ${lidar_offset_z}"
+            rpy="0 0 0"/>
+
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+
+    </joint>
+
+</robot>
