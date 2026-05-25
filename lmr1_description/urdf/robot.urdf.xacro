@@ -35,6 +35,9 @@
         <plugin name="diff_drive_controller"
                 filename="libgazebo_ros_diff_drive.so">
 
+            <!-- ROS namespace -->
+            <robotNamespace>/lmr1</robotNamespace>
+
             <!-- wheels -->
             <leftJoint>left_wheel_joint</leftJoint>
             <rightJoint>right_wheel_joint</rightJoint>
@@ -43,9 +46,9 @@
             <wheelSeparation>0.2</wheelSeparation>
             <wheelDiameter>0.065</wheelDiameter>
 
-            <!-- limits -->
-            <maxWheelTorque>5</maxWheelTorque>
-            <maxWheelAcceleration>10</maxWheelAcceleration>
+            <!-- dynamics -->
+            <wheelTorque>5</wheelTorque>
+            <wheelAcceleration>10</wheelAcceleration>
 
             <!-- topics -->
             <commandTopic>cmd_vel</commandTopic>
@@ -55,10 +58,16 @@
             <odometryFrame>odom</odometryFrame>
             <robotBaseFrame>base_link</robotBaseFrame>
 
-            <!-- behavior -->
-            <publishWheelTF>true</publishWheelTF>
-            <publishTf>true</publishTf>
-            <publishWheelJointState>true</publishWheelJointState>
+            <!-- TF -->
+            <publishWheelTF>false</publishWheelTF>
+            <publishWheelJointState>false</publishWheelJointState>
+            <publishOdomTF>true</publishOdomTF>
+
+            <!-- odometry -->
+            <odometrySource>world</odometrySource>
+
+            <!-- debug -->
+            <rosDebugLevel>na</rosDebugLevel>
 
             <!-- update -->
             <updateRate>50</updateRate>
@@ -67,17 +76,24 @@
     </gazebo>
 
     <gazebo reference="left_wheel_link">
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu1>2.0</mu1>
+        <mu2>2.0</mu2>
         <kp>1000000.0</kp>
         <kd>100.0</kd>
     </gazebo>
 
     <gazebo reference="right_wheel_link">
-        <mu1>1.0</mu1>
-        <mu2>1.0</mu2>
+        <mu1>2.0</mu1>
+        <mu2>2.0</mu2>
         <kp>1000000.0</kp>
         <kd>100.0</kd>
+    </gazebo>
+
+    <gazebo reference="caster_wheel_link">
+        <mu1>0.5</mu1>
+        <mu2>0.5</mu2>
+        <kp>100000.0</kp>
+        <kd>10.0</kd>
     </gazebo>
 
 </robot>
