@@ -20,9 +20,9 @@
     <xacro:property name="base_mass" value="2.0"/>
 
     <!-- base visual/collision offset -->
-    <xacro:property name="base_offset_x" value="0.0"/>
+    <xacro:property name="base_offset_x" value="0.065"/>
     <xacro:property name="base_offset_y" value="0.0"/>
-    <xacro:property name="base_offset_z" value="0.0"/>
+    <xacro:property name="base_offset_z" value="0.055"/>
 
     <!-- ==================== -->
     <!-- Wheel Dimensions -->
@@ -31,7 +31,7 @@
     <xacro:property name="wheel_radius" value="0.0325"/>
     <xacro:property name="wheel_width"  value="0.020"/>
 
-    <xacro:property name="wheel_mass" value="0.05"/>
+    <xacro:property name="wheel_mass" value="0.150"/>
 
     <!-- wheel locations -->
     <xacro:property name="wheel_offset_x" value="0.0"/>
@@ -42,7 +42,9 @@
     <!-- Caster -->
     <!-- ==================== -->
 
-    <xacro:property name="caster_radius" value="0.0075"/>
+    <xacro:property name="caster_radius" value="0.008"/>
+
+    <xacro:property name="caster_mass" value="0.05"/>
 
     <xacro:property name="caster_offset_x" value="0.175"/>
     <xacro:property name="caster_offset_y" value="0.0"/>
