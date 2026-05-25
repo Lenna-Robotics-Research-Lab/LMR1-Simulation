@@ -1,0 +1,36 @@
+<launch>
+
+  <!-- ============================= -->
+  <!-- Load robot description -->
+  <!-- ============================= -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find lmr1_description)/urdf/robot.urdf.xacro"/>
+
+  <!-- ============================= -->
+  <!-- Start empty Gazebo world -->
+  <!-- ============================= -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- ============================= -->
+  <!-- Spawn robot into Gazebo -->
+  <!-- ============================= -->
+  <node name="spawn_urdf"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        args="-urdf -model lmr1 -param robot_description"
+        output="screen"/>
+
+  <!-- ============================= -->
+  <!-- Publish TF from joint states -->
+  <!-- ============================= -->
+  <node name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher"/>
+
+</launch>
