@@ -3,9 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <link name="caster_wheel_link">
-
         <inertial>
-
             <origin xyz="0 0 0" rpy="0 0 0"/>
 
             <mass value="${caster_mass}"/>
@@ -13,19 +11,14 @@
             <xacro:sphere_inertia
                 mass="${caster_mass}"
                 radius="${caster_radius}"/>
-
         </inertial>
 
-        <!-- collision -->
-
         <collision>
-
             <origin xyz="0 0 0" rpy="0 0 0"/>
 
             <geometry>
                 <sphere radius="${caster_radius}"/>
             </geometry>
-
         </collision>
 
     </link>
@@ -41,7 +34,6 @@
 
         <parent link="base_link"/>
         <child link="caster_wheel_link"/>
-
     </joint>
 
 </robot>
