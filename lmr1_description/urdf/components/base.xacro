@@ -29,9 +29,7 @@
         <visual>
 
             <origin
-                xyz="${base_offset_x}
-                     ${base_offset_y}
-                     ${base_offset_z}"
+                xyz="0 0 0"
                 rpy="0 0 0"/>
 
             <geometry>
