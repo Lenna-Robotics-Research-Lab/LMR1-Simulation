@@ -4,6 +4,18 @@
 
     <link name="caster_wheel_link">
 
+        <inertial>
+
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+
+            <mass value="${caster_mass}"/>
+
+            <xacro:sphere_inertia
+                mass="${caster_mass}"
+                radius="${caster_radius}"/>
+
+        </inertial>
+
         <!-- collision -->
 
         <collision>
