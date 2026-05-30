@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<robot name="lmr1_web">
+
+  <!-- BASE -->
+
+  <link name="base_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+
+      <geometry>
+        <mesh filename="./meshes/base.dae"/>
+      </geometry>
+
+      <material name="base_color">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+
+    </visual>
+
+  </link>
+
+  <!-- RIGHT WHEEL -->
+
+  <link name="right_wheel_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.57 0"/>
+
+      <geometry>
+        <mesh filename="./meshes/wheel.dae"/>
+      </geometry>
+
+      <material name="wheel_color">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+
+    </visual>
+
+  </link>
+
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+
+    <origin
+      xyz="0 -0.1015 0"
+      rpy="1.5708 0 0"/>
+
+    <parent link="base_link"/>
+    <child link="right_wheel_link"/>
+
+    <axis xyz="0 0 -1"/>
+
+  </joint>
+
+  <!-- LEFT WHEEL -->
+
+  <link name="left_wheel_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -1.57 0"/>
+
+      <geometry>
+        <mesh filename="./meshes/wheel.dae"/>
+      </geometry>
+
+      <material name="wheel_color">
+        <color rgba="0.2 0.2 0.2 1"/>
+      </material>
+
+    </visual>
+
+  </link>
+
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+
+    <origin
+      xyz="0 0.1015 0"
+      rpy="-1.5708 0 0"/>
+
+    <parent link="base_link"/>
+    <child link="left_wheel_link"/>
+
+    <axis xyz="0 0 1"/>
+
+  </joint>
+
+</robot>
