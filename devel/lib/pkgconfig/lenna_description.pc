@@ -1,1 +1,0 @@
-/home/erfan/Repositories/lmr-simulator/devel/.private/lenna_description/lib/pkgconfig/lenna_description.pc
