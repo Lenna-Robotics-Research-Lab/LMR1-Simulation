@@ -22,7 +22,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: lmr1_description/web_viewer
+        working-directory: web_viewer
 
     steps:
 
@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: lmr1_description/web_viewer/dist
+          path: web_viewer/dist
 
   deploy:
 
