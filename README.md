@@ -2,7 +2,7 @@
 
 ## Interactive URDF Viewer
 
-🌐 https://<username>.github.io/LMR1-Simulation/
+🌐 https://lenna-robotics-research-lab.github.io/LMR1-Simulation/
 
 Explore the robot model directly in your browser:
 - Orbit camera
