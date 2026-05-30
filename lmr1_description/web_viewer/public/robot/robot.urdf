@@ -10,7 +10,7 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
 
       <geometry>
-        <mesh filename="./meshes/base.glb"/>
+        <mesh filename="./meshes/base_light.dae"/>
       </geometry>
 
       <material name="base_color">
