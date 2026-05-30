@@ -13,10 +13,6 @@
         <mesh filename="./meshes/base_light.dae"/>
       </geometry>
 
-      <material name="base_color">
-        <color rgba="0.8 0.8 0.8 1"/>
-      </material>
-
     </visual>
 
   </link>
@@ -29,12 +25,8 @@
       <origin xyz="0 0 0" rpy="0 -1.57 0"/>
 
       <geometry>
-        <mesh filename="./meshes/wheel.dae"/>
+        <mesh filename="./meshes/wheel_light.dae"/>
       </geometry>
-
-      <material name="wheel_color">
-        <color rgba="0.2 0.2 0.2 1"/>
-      </material>
 
     </visual>
 
@@ -63,12 +55,8 @@
       <origin xyz="0 0 0" rpy="0 -1.57 0"/>
 
       <geometry>
-        <mesh filename="./meshes/wheel.dae"/>
+        <mesh filename="./meshes/wheel_light.dae"/>
       </geometry>
-
-      <material name="wheel_color">
-        <color rgba="0.2 0.2 0.2 1"/>
-      </material>
 
     </visual>
 
