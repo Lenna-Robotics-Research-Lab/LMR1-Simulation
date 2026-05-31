@@ -14,9 +14,6 @@
 
 LMR1 is a differential-drive mobile robot platform intended for research and education. The repository maintains equivalent ROS1 and ROS2 implementations to support both legacy and modern robotics workflows.
 
-> [!NOTE]\
-> Use the `Interactive URDF Viewer` to spawn the URDF online. Please note that it might take several seconds to fully bring up the LMR1 robot model.
-
 ## Repository Structure
 
 ```mermaid
@@ -52,7 +49,7 @@ flowchart TD
 
 ### ROS1 (Noetic)
 
-The ROS1 version provides a complete simulation environment for the LMR1 platform using the ROS Noetic/Melodic ecosystem.
+The ROS1 version provides a complete simulation environment for the LMR1 platform using the ROS Noetic ecosystem.
 
 #### Features
 
