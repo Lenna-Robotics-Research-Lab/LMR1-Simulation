@@ -1,3 +1,5 @@
+
+
 <div align="justify">
 
 # LENNA Mobile Robot Simulation
@@ -54,8 +56,12 @@ flowchart TD
 <tr>
 <td width="50%" valign="top">
 
-### ROS1 (Noetic)
+### ROS
 
+[![Static Badge](https://img.shields.io/badge/Ubuntu-20.04_Focal-orange?logo=ubuntu)](https://releases.ubuntu.com/focal/)
+[![Static Badge](https://img.shields.io/badge/ROS-Noetic-violet?logo=ros)](http://wiki.ros.org/noetic)
+[![Static Badge](https://img.shields.io/badge/Gazebo-Classic-green)](https://classic.gazebosim.org/)
+ 
 The ROS1 version provides a complete simulation environment for the LMR1 platform using the ROS Noetic ecosystem.
 
 #### Features
@@ -109,7 +115,11 @@ $ roslaunch lmr1_description gmapping_slam.launch
 </td>
 <td width="50%" valign="top">
 
-### ROS2 (Humble)
+### ROS2
+
+[![Static Badge](https://img.shields.io/badge/Ubuntu-22.04_Jammy-orange?logo=ubuntu)](https://releases.ubuntu.com/jammy/)
+[![Static Badge](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/index.html)
+[![Static Badge](https://img.shields.io/badge/Gazebo-Ignition-yellow)](https://gazebosim.org/api/gazebo/6/)
 
 > [!NOTE]\
 > UNDER DEVEVLOPMENT!
