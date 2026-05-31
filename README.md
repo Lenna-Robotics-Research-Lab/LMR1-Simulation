@@ -4,6 +4,8 @@
 
 # LENNA Mobile Robot Simulation
 
+LENNA Mobile Robot is a differential-drive mobile robot platform intended for research and education. The repository maintains equivalent ROS1 and ROS2 simulations to support both legacy and modern robotics workflows.
+
 <p align="center">
   <img src="docs/media/urdf-rviz-visual.png" alt="LMR1 Simulation" width="1080">
 </p>
@@ -14,12 +16,12 @@
   </a>
 </p>
 
-LMR1 is a differential-drive mobile robot platform intended for research and education. The repository maintains equivalent ROS1 and ROS2 implementations to support both legacy and modern robotics workflows.
+
 
 </div>
 
 > [!NOTE]\
-> Use the `Interactive URDF Viewer` to spawn the URDF online. Please note that it might take several seconds to fully bring up the LMR1 robot model.
+> Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.io/LMR1-Simulation/) to spawn the URDF online. Please note that it might take several seconds to fully bring up the LENNA Mobile Robot model.
 
 <div align="justify">
 
