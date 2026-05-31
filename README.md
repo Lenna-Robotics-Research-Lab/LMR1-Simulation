@@ -10,6 +10,9 @@
   </a>
 </p>
 
+> [!NOTE]\
+> Use the `Interactive URDF Viewer` to spawn the URDF online. Please note that it might take several seconds to fully bring up the LMR1 robot model.
+
 ## Robot Overview
 
 LMR1 is a differential-drive mobile robot platform intended for research and education in:
@@ -98,7 +101,7 @@ $ roslaunch lmr1_description gazebo.launch
 You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
 
 <p align="center">
-  <img src="docs/media/lmr1_slam.gif" alt="LMR1 Simulation" width="1080">
+  <img src="docs/media/lmr1_slam.gif" alt="LMR1 Simulation" width="450">
 </p>
 
 
@@ -111,7 +114,8 @@ $ roslaunch lmr1_description gmapping_slam.launch
 
 ### ROS2 (Humble)
 
-UNDER DEVELOPMENT!
+> [!NOTE]\
+> UNDER DEVEVLOPMENT!
 
 </td>
 </tr>
