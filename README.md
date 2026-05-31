@@ -1,7 +1,7 @@
 # LENNA Mobile Robot Simulation
 
 <p align="center">
-  <img src="docs/media/lmr1_simulation.png" alt="LMR1 Simulation" width="900">
+  <img src="docs/media/urdf-rviz-visual.png" alt="LMR1 Simulation" width="1080">
 </p>
 
 <p align="center">
@@ -70,10 +70,40 @@ The ROS1 version provides a complete simulation environment for the LMR1 platfor
 
 #### Quick Start
 
+Copy the `lmr1_description` package from this repository into your ROS workspace and build the package.
+
 ```bash
-catkin_make
-source devel/setup.bash
-roslaunch lmr1_gazebo simulation.launch
+$ catkin build lmr1_description
+$ source devel/setup.bash
+```
+
+##### RViz Display
+
+To visualize the LMR1 URDF model in RViz, use the `display.launch` file:
+
+```bash
+$ roslaunch lmr1_description display.launch
+```
+
+##### Gazebo Simulation Turtlebot World
+
+To spawn the LMR1 robot in Gazebo using the default TurtleBot world, launch `gazebo.launch`:
+
+```bash
+$ roslaunch lmr1_description gazebo.launch
+```
+
+##### GMapping SLAM Implementation
+
+You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
+
+<p align="center">
+  <img src="docs/media/lmr1_slam.gif" alt="LMR1 Simulation" width="1080">
+</p>
+
+
+```bash
+$ roslaunch lmr1_description gmapping_slam.launch
 ```
 
 </td>
@@ -81,15 +111,7 @@ roslaunch lmr1_gazebo simulation.launch
 
 ### ROS2 (Humble)
 
-The ROS2 version provides a modern simulation environment built on the ROS2 ecosystem and contemporary robotics workflows.
-
-#### Quick Start
-
-```bash
-colcon build
-source install/setup.bash
-ros2 launch lmr1_gazebo simulation.launch.py
-```
+UNDER DEVELOPMENT!
 
 </td>
 </tr>
