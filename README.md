@@ -14,6 +14,13 @@
 
 LMR1 is a differential-drive mobile robot platform intended for research and education. The repository maintains equivalent ROS1 and ROS2 implementations to support both legacy and modern robotics workflows.
 
+</div>
+
+> [!NOTE]\
+> Use the `Interactive URDF Viewer` to spawn the URDF online. Please note that it might take several seconds to fully bring up the LMR1 robot model.
+
+<div align="justify">
+
 ## Repository Structure
 
 ```mermaid
@@ -70,7 +77,7 @@ $ catkin build lmr1_description
 $ source devel/setup.bash
 ```
 
-##### RViz Display
+##### 🖥️ RViz Display
 
 To visualize the LMR1 URDF model in RViz, use the `display.launch` file:
 
@@ -78,7 +85,7 @@ To visualize the LMR1 URDF model in RViz, use the `display.launch` file:
 $ roslaunch lmr1_description display.launch
 ```
 
-##### Gazebo Simulation Turtlebot World
+##### 🎮 Gazebo Simulation Turtlebot World
 
 To spawn the LMR1 robot in Gazebo using the default TurtleBot world, launch `gazebo.launch`:
 
@@ -86,7 +93,7 @@ To spawn the LMR1 robot in Gazebo using the default TurtleBot world, launch `gaz
 $ roslaunch lmr1_description gazebo.launch
 ```
 
-##### GMapping SLAM Implementation
+##### 🗺️ GMapping SLAM Implementation
 
 You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
 
