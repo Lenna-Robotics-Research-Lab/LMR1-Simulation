@@ -28,7 +28,7 @@ Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.i
 </div>
 
 > [!NOTE]\
-> The LENNA Mobile Robot model may take several seconds to load fully. Please wait for the model to finish loading before interacting with the viewer.
+> The LENNA Mobile Robot model may take several seconds to load fully.
 
 </td>
 </tr>
