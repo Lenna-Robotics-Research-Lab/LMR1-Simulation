@@ -7,44 +7,6 @@ import GUI from 'lil-gui';
 // TF AXES
 // =====================================================
 
-// function createThickAxes(size = 0.075) {
-
-//   const group = new THREE.Group();
-
-//   const radius = size * 0.04;
-
-//   const xAxis = new THREE.ArrowHelper(
-//     new THREE.Vector3(1, 0, 0),
-//     new THREE.Vector3(0, 0, 0),
-//     size,
-//     0xff0000,
-//     size * 0.2,
-//     radius * 4
-//   );
-
-//   const yAxis = new THREE.ArrowHelper(
-//     new THREE.Vector3(0, 1, 0),
-//     new THREE.Vector3(0, 0, 0),
-//     size,
-//     0x00ff00,
-//     size * 0.2,
-//     radius * 4
-//   );
-
-//   const zAxis = new THREE.ArrowHelper(
-//     new THREE.Vector3(0, 0, 1),
-//     new THREE.Vector3(0, 0, 0),
-//     size,
-//     0x0000ff,
-//     size * 0.2,
-//     radius * 4
-//   );
-
-//   group.add(xAxis, yAxis, zAxis);
-
-//   return group;
-// }
-
 function createThickAxes(
   length = 0.08,
   radius = 0.004
@@ -128,7 +90,6 @@ function createThickAxes(
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x5f5f5f);
-// scene.fog = new THREE.Fog(0x707070, 3, 12);
 
 // =====================================================
 // CAMERA
@@ -151,10 +112,6 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 document.body.appendChild(renderer.domElement);
-
-// =====================================================
-// TITLE
-// =====================================================
 
 // =====================================================
 // HEADER (LOGO + TITLE + SUBTITLE)
@@ -437,7 +394,7 @@ document.head.appendChild(guiStyle);
     tfControllers.push(controller);
   });
 
-  tfFolder.close();
+  tfFolder.open();
 
   // =====================================================
   // JOINT SYSTEM (DEG + TOOLS)
