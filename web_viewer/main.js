@@ -7,40 +7,117 @@ import GUI from 'lil-gui';
 // TF AXES
 // =====================================================
 
-function createThickAxes(size = 0.075) {
+// function createThickAxes(size = 0.075) {
+
+//   const group = new THREE.Group();
+
+//   const radius = size * 0.04;
+
+//   const xAxis = new THREE.ArrowHelper(
+//     new THREE.Vector3(1, 0, 0),
+//     new THREE.Vector3(0, 0, 0),
+//     size,
+//     0xff0000,
+//     size * 0.2,
+//     radius * 4
+//   );
+
+//   const yAxis = new THREE.ArrowHelper(
+//     new THREE.Vector3(0, 1, 0),
+//     new THREE.Vector3(0, 0, 0),
+//     size,
+//     0x00ff00,
+//     size * 0.2,
+//     radius * 4
+//   );
+
+//   const zAxis = new THREE.ArrowHelper(
+//     new THREE.Vector3(0, 0, 1),
+//     new THREE.Vector3(0, 0, 0),
+//     size,
+//     0x0000ff,
+//     size * 0.2,
+//     radius * 4
+//   );
+
+//   group.add(xAxis, yAxis, zAxis);
+
+//   return group;
+// }
+
+function createThickAxes(
+  length = 0.08,
+  radius = 0.004
+) {
 
   const group = new THREE.Group();
 
-  const radius = size * 0.04;
+  const cylinderGeometry =
+    new THREE.CylinderGeometry(
+      radius,
+      radius,
+      length,
+      16
+    );
 
-  const xAxis = new THREE.ArrowHelper(
-    new THREE.Vector3(1, 0, 0),
-    new THREE.Vector3(0, 0, 0),
-    size,
-    0xff0000,
-    size * 0.2,
-    radius * 4
+  // --------------------------------------------------
+  // X (RED)
+  // --------------------------------------------------
+
+  const xMaterial =
+    new THREE.MeshStandardMaterial({
+      color: 0xff0000
+    });
+
+  const xAxis =
+    new THREE.Mesh(
+      cylinderGeometry,
+      xMaterial
+    );
+
+  xAxis.rotation.z = -Math.PI / 2;
+  xAxis.position.x = length / 2;
+
+  // --------------------------------------------------
+  // Y (GREEN)
+  // --------------------------------------------------
+
+  const yMaterial =
+    new THREE.MeshStandardMaterial({
+      color: 0x00ff00
+    });
+
+  const yAxis =
+    new THREE.Mesh(
+      cylinderGeometry,
+      yMaterial
+    );
+
+  yAxis.position.y = length / 2;
+
+  // --------------------------------------------------
+  // Z (BLUE)
+  // --------------------------------------------------
+
+  const zMaterial =
+    new THREE.MeshStandardMaterial({
+      color: 0x0000ff
+    });
+
+  const zAxis =
+    new THREE.Mesh(
+      cylinderGeometry,
+      zMaterial
+    );
+
+  zAxis.rotation.x = Math.PI / 2;
+  zAxis.position.z = length / 2;
+
+  group.add(
+    xAxis,
+    yAxis,
+    zAxis
   );
-
-  const yAxis = new THREE.ArrowHelper(
-    new THREE.Vector3(0, 1, 0),
-    new THREE.Vector3(0, 0, 0),
-    size,
-    0x00ff00,
-    size * 0.2,
-    radius * 4
-  );
-
-  const zAxis = new THREE.ArrowHelper(
-    new THREE.Vector3(0, 0, 1),
-    new THREE.Vector3(0, 0, 0),
-    size,
-    0x0000ff,
-    size * 0.2,
-    radius * 4
-  );
-
-  group.add(xAxis, yAxis, zAxis);
 
   return group;
 }
@@ -50,8 +127,8 @@ function createThickAxes(size = 0.075) {
 // =====================================================
 
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x6e6e6e);
-scene.fog = new THREE.Fog(0x707070, 3, 12);
+scene.background = new THREE.Color(0x5f5f5f);
+// scene.fog = new THREE.Fog(0x707070, 3, 12);
 
 // =====================================================
 // CAMERA
@@ -79,22 +156,82 @@ document.body.appendChild(renderer.domElement);
 // TITLE
 // =====================================================
 
-const title = document.createElement('div');
-title.innerHTML = 'LMR1 URDF Visualization';
+// =====================================================
+// HEADER (LOGO + TITLE + SUBTITLE)
+// =====================================================
 
-Object.assign(title.style, {
+const header = document.createElement('div');
+
+Object.assign(header.style, {
   position: 'absolute',
-  top: '16px',
-  left: '12px',
+  top: '25px',
+  left: '25px',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
   color: 'white',
   fontFamily: 'sans-serif',
-  fontSize: '20px',
-  fontWeight: 'bold',
   pointerEvents: 'none',
   userSelect: 'none'
 });
 
-document.body.appendChild(title);
+// -----------------------------------------------------
+// LOGO
+// -----------------------------------------------------
+
+const logo = document.createElement('img');
+
+logo.src = './logo.png';
+
+Object.assign(logo.style, {
+  width: '48px',
+  height: '48px',
+  objectFit: 'contain'
+});
+
+// -----------------------------------------------------
+// TEXT CONTAINER
+// -----------------------------------------------------
+
+const textContainer = document.createElement('div');
+
+// -----------------------------------------------------
+// TITLE
+// -----------------------------------------------------
+
+const title = document.createElement('div');
+
+title.textContent = 'LMR URDF Visualization';
+
+Object.assign(title.style, {
+  fontSize: '25px',
+  fontWeight: '700',
+  lineHeight: '1'
+});
+
+// -----------------------------------------------------
+// SUBTITLE
+// -----------------------------------------------------
+
+const subtitle = document.createElement('div');
+
+subtitle.textContent = 'LENNA Robotics Research Lab.';
+
+Object.assign(subtitle.style, {
+  marginTop: '4px',
+  fontSize: '14px',
+  fontWeight: '400',
+  color: '#d0d0d0',
+  letterSpacing: '0.5px'
+});
+
+textContainer.appendChild(title);
+textContainer.appendChild(subtitle);
+
+header.appendChild(logo);
+header.appendChild(textContainer);
+
+document.body.appendChild(header);
 
 // =====================================================
 // CONTROLS
@@ -107,6 +244,38 @@ controls.dampingFactor = 0.05;
 controls.minDistance = 0.2;
 controls.maxDistance = 10;
 controls.update();
+
+function disableAutoOrbit() {
+
+  autoOrbit = false;
+
+  window.removeEventListener('pointerdown', disableAutoOrbit);
+  window.removeEventListener('wheel', disableAutoOrbit);
+  window.removeEventListener('touchstart', disableAutoOrbit);
+
+}
+
+window.addEventListener('pointerdown', disableAutoOrbit);
+window.addEventListener('wheel', disableAutoOrbit);
+window.addEventListener('touchstart', disableAutoOrbit);
+
+// =====================================================
+// CAMERA INTRO ANIMATION
+// =====================================================
+
+let autoOrbit = false;
+
+const orbitRadius = Math.sqrt(
+  camera.position.x * camera.position.x +
+  camera.position.z * camera.position.z
+);
+
+let orbitAngle = Math.atan2(
+  camera.position.z,
+  camera.position.x
+);
+
+const orbitSpeed = 0.157; // rad/sec
 
 // =====================================================
 // LIGHTING
@@ -149,17 +318,70 @@ loader.load('./robot/robot.urdf', robot => {
   robot.rotation.x = -Math.PI / 2;
   scene.add(robot);
 
+  // ================================================
+  // START CAMERA INTRO AFTER MODEL IS LOADED
+  // ================================================
+
+  requestAnimationFrame(() => {
+
+    requestAnimationFrame(() => {
+
+      setTimeout(() => {
+
+        autoOrbit = true;
+
+      }, 1000);
+
+    });
+
+  });
+
   // =====================================================
   // GUI
   // =====================================================
 
+  const guiStyle = document.createElement('style');
+
+  guiStyle.textContent = `
+  .lil-gui {
+      font-size: 15px !important;
+  }
+
+  .lil-gui .title {
+      font-size: 16px !important;
+      font-weight: 600 !important;
+  }
+
+  .lil-gui .controller {
+      min-height: 28px !important;
+  }
+
+  .lil-gui input,
+  .lil-gui select,
+  .lil-gui button {
+      font-size: 14px !important;
+  }
+
+  .lil-gui .name {
+      font-size: 14px !important;
+  }
+  `;
+
+document.head.appendChild(guiStyle);
+
   const gui = new GUI();
-  gui.width = 300;
+  gui.width = 350;
+
+  console.log(gui.domElement);
+
+  gui.domElement.style.minWidth = '350px';
+  gui.domElement.style.width = '350px';
+  gui.domElement.style.maxWidth = '350px';
 
   Object.assign(gui.domElement.style, {
     position: 'absolute',
-    top: '55px',
-    left: '12px'
+    top: '100px',
+    left: '25px'
   });
 
   // =====================================================
@@ -177,7 +399,11 @@ loader.load('./robot/robot.urdf', robot => {
 
     if (node.isURDFLink) {
 
-      const tf = createThickAxes(0.075);
+      const tf = createThickAxes(
+        0.075,
+        0.004
+      );
+
       node.add(tf);
       tfHelpers[node.name] = tf;
 
@@ -341,10 +567,32 @@ window.addEventListener('resize', () => {
 // LOOP
 // =====================================================
 
+const clock = new THREE.Clock();
+
 function animate() {
 
   requestAnimationFrame(animate);
-  controls.update();
+
+  const dt = clock.getDelta();
+
+  if (autoOrbit) {
+
+    orbitAngle += orbitSpeed * dt;
+
+    camera.position.x =
+      orbitRadius * Math.cos(orbitAngle);
+
+    camera.position.z =
+      orbitRadius * Math.sin(orbitAngle);
+
+    camera.lookAt(controls.target);
+
+  } else {
+
+    controls.update();
+
+  }
+
   renderer.render(scene, camera);
 
 }
