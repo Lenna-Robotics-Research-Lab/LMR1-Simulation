@@ -34,32 +34,36 @@ Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.i
 </tr>
 </table>
 
+## Repository Structure
 
+    .
+    ├── docs/                    # Reading Materials and Figures
+    │   └── media/
+    │
+    ├── web_viewer/
+    │   ├── public/              # Files and Figures for the Online Viewer
+    │   ├── index.html 
+    │   ├── main.html 
+    │   ├── package.json 
+    │   └── vite.config.js/ 
+    │
+    ├── lmr1_description/        # ROS1 Package for LMR1 URDF and Simulation
+    │   ├── launch/
+    │   │   ├── display.launch
+    │   │   ├── gazebo.launch
+    │   │   └── ...
+    │   ├── meshes/              # 3D Meshes in the COLLADA Format
+    │   │   ├── base.dae
+    │   │   └── wheel.dae
+    │   ├── urdf/                # XACRO/URDF Modular Descriptions Files
+    │   │   ├── common/
+    │   │   ├── components/
+    │   │   └── robot.urdf.xacro
+    │   ├── CMakeLists.txt
+    │   └── package.xml
+    │
+    └── README.md                # Entry Point, Quick Start
 
-```mermaid
-flowchart TD
-
-    A[LMR Simulation]
-
-    A --> B[lmr1_description]
-    A --> C[lmr2_description]
-    A --> D[web_viewer]
-    A --> E[docs]
-
-    B --> B1[launch]
-    B --> B2[meshes]
-    B --> B3[urdf]
-    B --> B4[CMakeLists.txt]
-    B --> B5[package.xml]
-
-    D --> D1[public]
-    D --> D2[index.html]
-    D --> D3[main.js]
-    D --> D4[package.json]
-    D --> D5[vite.config.js]
-
-    E --> E1[media]
-```
 
 <div align="justify">
 
@@ -76,16 +80,6 @@ flowchart TD
 [![Static Badge](https://img.shields.io/badge/Gazebo-Classic-green)](https://classic.gazebosim.org/)
  
 The ROS1 version provides a complete simulation environment for the LMR1 platform using the ROS Noetic ecosystem.
-
-#### Features
-
-- Differential-drive mobile robot
-- URDF/Xacro robot description
-- Gazebo simulation
-- RViz visualization
-- SLAM Toolbox integration
-- AMCL localization
-- Navigation Stack support
 
 #### Quick Start
 
