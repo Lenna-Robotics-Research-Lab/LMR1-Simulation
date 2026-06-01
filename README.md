@@ -15,7 +15,7 @@ LENNA Mobile Robot is a differential-drive mobile robot platform intended for re
 <td width="50%" valign="top">
 
 <p align="center">
-  <img src="docs/media/urdf-viewer.gif" alt="LMR1 Simulation" width="490">
+  <img src="docs/media/urdf-viewer.gif" alt="LMR1 Simulation" width="400">
 </p>
 
 </td>
@@ -23,7 +23,7 @@ LENNA Mobile Robot is a differential-drive mobile robot platform intended for re
 
 <div align="justify">
   
-Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.io/LMR1-Simulation/) to load and explore the robot model online. The joint sliders allow you to simulate joint motions and the robot's kinematic structure. You can also enable the TF visualizer to display the coordinate frames defined according to the REP 105 Standard. Both tools are available from the control panel on the left side of the viewer. 
+Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.io/LMR1-Simulation/) to load and explore the robot model online. The joint sliders and TF visualizer tools are available from the control panel on the left side of the viewer. 
 
 </div>
 
@@ -34,9 +34,7 @@ Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.i
 </tr>
 </table>
 
-<div align="justify">
 
-## Repository Structure
 
 ```mermaid
 flowchart TD
@@ -62,6 +60,8 @@ flowchart TD
 
     E --> E1[media]
 ```
+
+<div align="justify">
 
 ## ROS Implementations
 
