@@ -16,12 +16,33 @@ LENNA Mobile Robot is a differential-drive mobile robot platform intended for re
   </a>
 </p>
 
-
-
 </div>
+
+
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<p align="center">
+  <img src="docs/media/urdf-viewer.gif" alt="LMR1 Simulation" width="1080">
+</p>
+
+</td>
+<td width="50%" valign="top">
 
 > [!NOTE]\
 > Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.io/LMR1-Simulation/) to spawn the URDF online. Please note that it might take several seconds to fully bring up the LENNA Mobile Robot model.
+> <p align="center">
+>  <a href="https://lenna-robotics-research-lab.github.io/LMR1-Simulation/">
+>    <img src="https://img.shields.io/badge/Interactive%20URDF-Open%20Viewer-blue?style=for-the-badge" alt="Interactive URDF Viewer">
+>  </a>
+> </p>
+
+
+</td>
+</tr>
+</table>
 
 <div align="justify">
 
