@@ -13,6 +13,7 @@ function createThickAxes(
 ) {
 
   const group = new THREE.Group();
+  group.renderOrder = 999;
 
   const cylinderGeometry =
     new THREE.CylinderGeometry(
@@ -28,7 +29,8 @@ function createThickAxes(
 
   const xMaterial =
     new THREE.MeshStandardMaterial({
-      color: 0xff0000
+      color: 0xff0000,
+      depthTest: false
     });
 
   const xAxis =
@@ -46,7 +48,8 @@ function createThickAxes(
 
   const yMaterial =
     new THREE.MeshStandardMaterial({
-      color: 0x00ff00
+      color: 0x00ff00,
+      depthTest: false
     });
 
   const yAxis =
@@ -63,7 +66,8 @@ function createThickAxes(
 
   const zMaterial =
     new THREE.MeshStandardMaterial({
-      color: 0x0000ff
+      color: 0x0000ff,
+      depthTest: false
     });
 
   const zAxis =
@@ -102,7 +106,7 @@ const camera = new THREE.PerspectiveCamera(
   100
 );
 
-camera.position.set(0.5, 0.3, 0.5);
+camera.position.set(0.4, 0.25, 0.4);
 
 // =====================================================
 // RENDERER
@@ -232,7 +236,7 @@ let orbitAngle = Math.atan2(
   camera.position.x
 );
 
-const orbitSpeed = 0.157; // rad/sec
+const orbitSpeed = 0.25; // rad/sec
 
 // =====================================================
 // LIGHTING
@@ -287,7 +291,7 @@ loader.load('./robot/robot.urdf', robot => {
 
         autoOrbit = true;
 
-      }, 1000);
+      }, 2000);
 
     });
 
@@ -350,16 +354,18 @@ document.head.appendChild(guiStyle);
   const tfHelpers = {};
   const tfControllers = [];
 
-  const tfConfig = { enabled: true };
+  const tfConfig = { enabled: false };
 
   robot.traverse(node => {
 
     if (node.isURDFLink) {
 
       const tf = createThickAxes(
-        0.075,
-        0.004
+        0.06,
+        0.003
       );
+
+      tf.visible = false;
 
       node.add(tf);
       tfHelpers[node.name] = tf;
@@ -392,6 +398,13 @@ document.head.appendChild(guiStyle);
       .onChange(v => tf.visible = tfConfig.enabled && v);
 
     tfControllers.push(controller);
+  });
+
+  // Initial disabled appearance
+
+  tfControllers.forEach(c => {
+    c.domElement.style.pointerEvents = 'none';
+    c.domElement.style.opacity = '0.35';
   });
 
   tfFolder.open();
