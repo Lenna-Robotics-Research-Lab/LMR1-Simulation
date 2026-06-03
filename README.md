@@ -120,7 +120,7 @@ $ roslaunch lmr1_description gmapping_slam.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="365">
+  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="360">
 </p>
 
 </td>
