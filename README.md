@@ -5,7 +5,7 @@
 LENNA Mobile Robot is a differential-drive mobile robot platform intended for research and education. The repository maintains equivalent ROS1 and ROS2 simulations to support both legacy and modern robotics workflows.
 
 <p align="center">
-  <img src="docs/media/urdf-rviz-visual.png" alt="LMR1 Simulation" width="1080">
+  <img src="docs/media/urdf-rviz-visual.png" alt="LMR1 RViz URDF" width="1080">
 </p>
 
 </div>
@@ -15,7 +15,7 @@ LENNA Mobile Robot is a differential-drive mobile robot platform intended for re
 <td width="50%" valign="top">
 
 <p align="center">
-  <img src="docs/media/urdf-viewer.gif" alt="LMR1 Simulation" width="400">
+  <img src="docs/media/urdf-viewer.gif" alt="LMR1 URDF Viewer" width="400">
 </p>
 
 </td>
@@ -111,7 +111,7 @@ $ roslaunch lmr1_description gazebo.launch
 You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
 
 <p align="center">
-  <img src="docs/media/lmr1_slam.gif" alt="LMR1 Simulation" width="400">
+  <img src="docs/media/lmr1_slam_gmapping.gif" alt="LMR1 GMapping SLAM" width="400">
 </p>
 
 
@@ -124,7 +124,7 @@ $ roslaunch lmr1_description gmapping_slam.launch
 You can run `navigation.launch` to demonstrate the `amcl` and `move_base` packages through ROS Navigation Stack:
 
 <p align="center">
-  <img src="docs/media/lmr1_navigation.gif" alt="LMR1 Simulation" width="400">
+  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="400">
 </p>
 
 
