@@ -67,13 +67,11 @@ Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.i
 
 <div align="justify">
 
-## ROS Implementations
+## ROS1 &nbsp;&nbsp; [![Static Badge](https://img.shields.io/badge/Ubuntu-20.04_Focal-orange?logo=ubuntu)](https://releases.ubuntu.com/focal/) [![Static Badge](https://img.shields.io/badge/ROS-Noetic-violet?logo=ros)](http://wiki.ros.org/noetic) [![Static Badge](https://img.shields.io/badge/Gazebo-Classic-green)](https://classic.gazebosim.org/)
 
-### ROS
 
-[![Static Badge](https://img.shields.io/badge/Ubuntu-20.04_Focal-orange?logo=ubuntu)](https://releases.ubuntu.com/focal/)
-[![Static Badge](https://img.shields.io/badge/ROS-Noetic-violet?logo=ros)](http://wiki.ros.org/noetic)
-[![Static Badge](https://img.shields.io/badge/Gazebo-Classic-green)](https://classic.gazebosim.org/)
+
+
  
 The ROS1 version provides a complete simulation environment for the LMR1 platform using the ROS Noetic ecosystem.
 
@@ -122,7 +120,7 @@ $ roslaunch lmr1_description gmapping_slam.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="360">
+  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="365">
 </p>
 
 </td>
@@ -149,23 +147,33 @@ $ roslaunch lmr1_description navigation.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_amcl_navigation_crop.gif" alt="LMR1 Navigation" width="370">
+  <img src="docs/media/lmr1_amcl_navigation_crop.gif" alt="LMR1 Navigation" width="365">
 </p>
 
 </td>
 </tr>
 </table>
 
-### ROS2
+## ROS2 &nbsp;&nbsp; [![Static Badge](https://img.shields.io/badge/Ubuntu-22.04_Jammy-orange?logo=ubuntu)](https://releases.ubuntu.com/jammy/) [![Static Badge](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/index.html) [![Static Badge](https://img.shields.io/badge/Gazebo-Ignition-yellow)](https://gazebosim.org/api/gazebo/6/)
 
-[![Static Badge](https://img.shields.io/badge/Ubuntu-22.04_Jammy-orange?logo=ubuntu)](https://releases.ubuntu.com/jammy/)
-[![Static Badge](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/index.html)
-[![Static Badge](https://img.shields.io/badge/Gazebo-Ignition-yellow)](https://gazebosim.org/api/gazebo/6/)
+UNDER DEVELOPMENT!
 
-#### UNDER DEVELOPMENT!
+## Citation
 
-## License
+If you use this code or build upon this work, please cite:
 
-Specify your license here.
+```bibtex
+@INPROCEEDINGS{11213761,
+  author={Riazati, Erfan and Hajizadeh, Arian and Esmaeilzadeh, Seyed Majid},
+  booktitle={2025 33rd International Conference on Electrical Engineering (ICEE)}, 
+  title={Design and Implementation of a Modular ROS-Based Mobile Robot with Hierarchical Control}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1038-1043},
+  keywords={Visualization;Simultaneous localization and mapping;Navigation;Computer architecture;Real-time systems;Hardware;Mobile robots;Synchronization;Tuning;Testing;mobile robot;hierarchical control;distributed control;navigation;SLAM;ROS},
+  doi={10.1109/ICEE67339.2025.11213761}}
+
+```
 
 </div>
