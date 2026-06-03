@@ -136,23 +136,12 @@ $ roslaunch lmr1_description navigation.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="400">
+  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="380">
 </p>
 
 </td>
 </tr>
 </table>
-
-You can run `navigation.launch` to demonstrate the `amcl` and `move_base` packages through ROS Navigation Stack:
-
-<p align="center">
-  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="400">
-</p>
-
-
-```bash
-$ roslaunch lmr1_description navigation.launch
-```
 
 ### ROS2
 
