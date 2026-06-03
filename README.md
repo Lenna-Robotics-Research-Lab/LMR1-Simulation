@@ -136,7 +136,7 @@ $ roslaunch lmr1_description navigation.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="380">
+  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="320">
 </p>
 
 </td>
