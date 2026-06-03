@@ -119,6 +119,19 @@ You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm us
 $ roslaunch lmr1_description gmapping_slam.launch
 ```
 
+##### 🧭 AMCL Localization and Navigation Stack
+
+You can run `navigation.launch` to demonstrate the `amcl` and `move_base` packages through ROS Navigation Stack:
+
+<p align="center">
+  <img src="docs/media/lmr1_navigation.gif" alt="LMR1 Simulation" width="400">
+</p>
+
+
+```bash
+$ roslaunch lmr1_description navigation.launch
+```
+
 </td>
 <td width="50%" valign="top">
 
