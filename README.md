@@ -113,14 +113,14 @@ You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm us
 </div>
 
 ```bash
-$ roslaunch lmr1_description gmapping_slam.launch
+$ roslaunch lmr1_description gmapping.launch
 ```
 
 </td>
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="360">
+  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="365">
 </p>
 
 </td>
