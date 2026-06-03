@@ -291,7 +291,7 @@ loader.load('./robot/robot.urdf', robot => {
 
         autoOrbit = true;
 
-      }, 10000);
+      }, 3000);
 
     });
 
