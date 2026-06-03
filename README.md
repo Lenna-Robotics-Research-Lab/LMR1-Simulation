@@ -104,19 +104,32 @@ $ roslaunch lmr1_description gazebo.launch
 
 ##### 🗺️ GMapping SLAM Implementation
 
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<div align="justify">
+  
 You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
 
-<p align="center">
-  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="360">
-</p>
-
+</div>
 
 ```bash
 $ roslaunch lmr1_description gmapping_slam.launch
 ```
 
-##### 🧭 AMCL Localization and Navigation Stack
+</td>
+<td width="50%" valign="top">
+  
+<p align="center">
+  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="360">
+</p>
 
+</td>
+</tr>
+</table>
+
+##### 🧭 AMCL Localization and Navigation Stack
 
 <table>
 <tr>
@@ -136,7 +149,7 @@ $ roslaunch lmr1_description navigation.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_amcl_navigation_crop.gif" alt="LMR1 Navigation" width="360">
+  <img src="docs/media/lmr1_amcl_navigation_crop.gif" alt="LMR1 Navigation" width="370">
 </p>
 
 </td>
@@ -151,10 +164,8 @@ $ roslaunch lmr1_description navigation.launch
 
 #### UNDER DEVELOPMENT!
 
-
 ## License
 
 Specify your license here.
-
 
 </div>
