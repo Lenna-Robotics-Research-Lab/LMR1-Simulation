@@ -69,10 +69,6 @@ Use the [`Interactive URDF Viewer`](https://lenna-robotics-research-lab.github.i
 
 ## ROS Implementations
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
 ### ROS
 
 [![Static Badge](https://img.shields.io/badge/Ubuntu-20.04_Focal-orange?logo=ubuntu)](https://releases.ubuntu.com/focal/)
@@ -121,6 +117,32 @@ $ roslaunch lmr1_description gmapping_slam.launch
 
 ##### 🧭 AMCL Localization and Navigation Stack
 
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<div align="justify">
+  
+You can run `navigation.launch` to demonstrate the `amcl` and `move_base` packages through ROS Navigation Stack:
+
+</div>
+
+```bash
+$ roslaunch lmr1_description navigation.launch
+```
+
+</td>
+<td width="50%" valign="top">
+  
+<p align="center">
+  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="400">
+</p>
+
+</td>
+</tr>
+</table>
+
 You can run `navigation.launch` to demonstrate the `amcl` and `move_base` packages through ROS Navigation Stack:
 
 <p align="center">
@@ -132,21 +154,13 @@ You can run `navigation.launch` to demonstrate the `amcl` and `move_base` packag
 $ roslaunch lmr1_description navigation.launch
 ```
 
-</td>
-<td width="50%" valign="top">
-
 ### ROS2
 
 [![Static Badge](https://img.shields.io/badge/Ubuntu-22.04_Jammy-orange?logo=ubuntu)](https://releases.ubuntu.com/jammy/)
 [![Static Badge](https://img.shields.io/badge/ROS2-Humble-blue?logo=ros)](https://docs.ros.org/en/humble/index.html)
 [![Static Badge](https://img.shields.io/badge/Gazebo-Ignition-yellow)](https://gazebosim.org/api/gazebo/6/)
 
-> [!NOTE]\
-> UNDER DEVEVLOPMENT!
-
-</td>
-</tr>
-</table>
+#### UNDER DEVELOPMENT!
 
 
 ## License
