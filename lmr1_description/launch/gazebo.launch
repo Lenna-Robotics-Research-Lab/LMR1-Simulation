@@ -7,14 +7,19 @@
          command="$(find xacro)/xacro $(find lmr1_description)/urdf/robot.urdf.xacro"/>
 
   <!-- ============================= -->
-  <!-- Start empty Gazebo world -->
+  <!-- Gazebo TurtleBot World -->
   <!-- ============================= -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+    <arg name="world_name"
+         value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
+
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
+
   </include>
 
   <!-- ============================= -->
@@ -23,11 +28,11 @@
   <node name="spawn_urdf"
         pkg="gazebo_ros"
         type="spawn_model"
-        args="-urdf -model lmr1 -param robot_description"
+        args="-urdf -model lmr1 -param robot_description -x 0 -y 0 -z 0.05"
         output="screen"/>
 
   <!-- ============================= -->
-  <!-- Publish TF from joint states -->
+  <!-- Robot State Publisher -->
   <!-- ============================= -->
   <node name="robot_state_publisher"
         pkg="robot_state_publisher"
