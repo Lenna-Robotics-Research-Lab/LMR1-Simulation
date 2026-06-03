@@ -19,7 +19,7 @@
         parent="base_link"
         xyz="0 ${wheel_offset_y} ${wheel_offset_z}"
         rpy="-${PI/2} 0 0"
-        mesh_file="package://lmr1_description/meshes/wheel.dae"
+        mesh_file="package://lmr1_description/meshes/wheel_light.dae"
         axis="0 0 1"/>
 
     <!-- right wheel -->
@@ -28,7 +28,7 @@
         parent="base_link"
         xyz="0 -${wheel_offset_y} ${wheel_offset_z}"
         rpy="${PI/2} 0 0"
-        mesh_file="package://lmr1_description/meshes/wheel.dae"
+        mesh_file="package://lmr1_description/meshes/wheel_light.dae"
         axis="0 0 -1"/>
 
     <gazebo>

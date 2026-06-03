@@ -34,7 +34,7 @@
 
             <geometry>
 
-                <mesh filename="package://lmr1_description/meshes/base.dae"/>
+                <mesh filename="package://lmr1_description/meshes/base_light.dae"/>
 
             </geometry>
 
