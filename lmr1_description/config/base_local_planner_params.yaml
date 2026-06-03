@@ -1,0 +1,16 @@
+TrajectoryPlannerROS:
+  max_vel_x: 0.20
+  min_vel_x: 0.08
+  max_vel_theta: 1.2
+  min_vel_theta: -1.2
+  min_in_place_vel_theta: 1.2
+
+  clear_costmap_recovery: false
+
+  acc_lim_theta: 1.2
+  acc_lim_x: 0.08
+
+  xy_goal_tolerance: 0.12
+  yaw_goal_tolerance: 0.24
+
+  holonomic_robot: false
