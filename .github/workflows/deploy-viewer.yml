@@ -45,19 +45,40 @@ jobs:
         with:
           path: web_viewer/dist
 
-  deploy:
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  cleanup:
 
     runs-on: ubuntu-latest
 
     needs: build
 
     permissions:
+      contents: read
+
+    steps:
+
+      - name: Delete previous deployment records
+        continue-on-error: true
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    needs:
+      - build
+      - cleanup
+
+    permissions:
       pages: write
       id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
 
