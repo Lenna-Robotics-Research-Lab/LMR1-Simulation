@@ -107,7 +107,7 @@ $ roslaunch lmr1_description gazebo.launch
 You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
 
 <p align="center">
-  <img src="docs/media/lmr1_slam_gmapping.gif" alt="LMR1 GMapping SLAM" width="400">
+  <img src="docs/media/lmr1_slam_gmapping_crop.gif" alt="LMR1 GMapping SLAM" width="360">
 </p>
 
 
@@ -136,7 +136,7 @@ $ roslaunch lmr1_description navigation.launch
 <td width="50%" valign="top">
   
 <p align="center">
-  <img src="docs/media/lmr1_amcl_navigation.gif" alt="LMR1 Navigation" width="320">
+  <img src="docs/media/lmr1_amcl_navigation_crop.gif" alt="LMR1 Navigation" width="360">
 </p>
 
 </td>
