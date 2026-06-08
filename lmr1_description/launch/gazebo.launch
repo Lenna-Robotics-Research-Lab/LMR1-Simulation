@@ -28,7 +28,7 @@
   <node name="spawn_urdf"
         pkg="gazebo_ros"
         type="spawn_model"
-        args="-urdf -model lmr1 -param robot_description -x 0 -y 0 -z 0.05"
+        args="-urdf -model lmr1 -param robot_description -x 0.5 -y 0.5 -z 0.05"
         output="screen"/>
 
   <!-- ============================= -->
