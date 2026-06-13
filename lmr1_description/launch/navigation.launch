@@ -1,76 +1,91 @@
 <launch>
 
-  <!-- ============================= -->
-  <!-- Use Gazebo Clock -->
-  <!-- ============================= -->
-  <param name="use_sim_time" value="true"/>
+  <!-- ========================================================== -->
+  <!-- Launch Arguments                                            -->
+  <!-- ========================================================== -->
 
-  <!-- ============================= -->
-  <!-- Robot Description -->
-  <!-- ============================= -->
-  <param name="robot_description"
-         command="$(find xacro)/xacro $(find lmr1_description)/urdf/robot.urdf.xacro"/>
+  <!-- Simulation -->
+  <arg name="world_name"
+       default="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
 
-  <!-- ============================= -->
-  <!-- Gazebo TurtleBot World -->
-  <!-- ============================= -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="x_pos" default="0.5"/>
+  <arg name="y_pos" default="-0.5"/>
 
-    <arg name="world_name"
-         value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
+  <arg name="namespace" default="lmr1"/>
 
-    <arg name="paused" value="false"/>
-    <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
-    <arg name="debug" value="false"/>
+  <!-- Localization -->
+  <arg name="map_file"
+       default="$(find lmr1_description)/maps/lmr1_gmapping_turtleworld.yaml"/>
+
+  <!-- Visualization -->
+  <arg name="rviz_config"
+       default="$(find lmr1_description)/rviz/nav_config.rviz"/>
+
+  <!-- ========================================================== -->
+  <!-- Gazebo Simulation                                           -->
+  <!-- ========================================================== -->
+
+  <include file="$(find lmr1_description)/launch/gazebo.launch">
+
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="x_pos" value="$(arg x_pos)"/>
+    <arg name="y_pos" value="$(arg y_pos)"/>
 
   </include>
 
-  <!-- ============================= -->
-  <!-- Spawn Robot -->
-  <!-- ============================= -->
-  <node name="spawn_urdf"
-        pkg="gazebo_ros"
-        type="spawn_model"
-        args="-urdf -model lmr1 -param robot_description -x 0.5 -y -0.5 -z 0.05"
-        output="screen"/>
-
-  <!-- ============================= -->
-  <!-- Robot State Publisher -->
-  <!-- ============================= -->
-  <node name="robot_state_publisher"
-        pkg="robot_state_publisher"
-        type="robot_state_publisher"/>
-
-  <!-- ============================= -->
-  <!-- Map Server, AMCL, NavStack -->
-  <!-- ============================= -->
+  <!-- ========================================================== -->
+  <!-- Localization                                                -->
+  <!-- ========================================================== -->
 
   <node pkg="map_server"
         type="map_server"
         name="map_server"
-        args="$(find lmr1_description)/maps/lmr1_gmapping_turtleworld.yaml"/>
+        args="$(arg map_file)"/>
 
-  <include file="$(find amcl)/examples/amcl_diff.launch" />
+  <include file="$(find amcl)/examples/amcl_diff.launch"/>
 
-  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-        <rosparam file="$(find lmr1_description)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
-        <rosparam file="$(find lmr1_description)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-        <rosparam file="$(find lmr1_description)/config/local_costmap_params.yaml" command="load" />
-        <rosparam file="$(find lmr1_description)/config/global_costmap_params.yaml" command="load" /> 
-        <rosparam file="$(find lmr1_description)/config/base_local_planner_params.yaml" command="load" />
+  <!-- ========================================================== -->
+  <!-- Navigation                                                  -->
+  <!-- ========================================================== -->
 
-        <remap from="cmd_vel" to="/lmr1/cmd_vel"/>
+  <node pkg="move_base"
+      type="move_base"
+      name="move_base"
+      output="screen"
+      respawn="false">
+
+        <!-- Costmaps -->
+        <rosparam file="$(find lmr1_description)/config/costmap_common_params.yaml"
+                  command="load"
+                  ns="global_costmap"/>
+
+        <rosparam file="$(find lmr1_description)/config/costmap_common_params.yaml"
+                  command="load"
+                  ns="local_costmap"/>
+
+        <rosparam file="$(find lmr1_description)/config/local_costmap_params.yaml"
+                  command="load"/>
+
+        <rosparam file="$(find lmr1_description)/config/global_costmap_params.yaml"
+                  command="load"/>
+
+        <!-- Local Planner -->
+        <rosparam file="$(find lmr1_description)/config/base_local_planner_params.yaml"
+                  command="load"/>
+
+        <!-- /cmd_vel Publisher Topic -->          
+        <remap from="cmd_vel" to="/$(arg namespace)/cmd_vel"/>
+
   </node>
 
-  <!-- ============================= -->
-  <!-- RViz -->
-  <!-- ============================= -->
-  <node pkg="rviz"
+  <!-- ========================================================== -->
+  <!-- Visualization                                               -->
+  <!-- ========================================================== -->
+
+  <node name="rviz"
+        pkg="rviz"
         type="rviz"
-        name="rviz"
-        args="-d $(find lmr1_description)/rviz/nav_config.rviz"
-        output="screen"/>
+        output="screen"
+        args="-d $(arg rviz_config)"/>
 
 </launch>
