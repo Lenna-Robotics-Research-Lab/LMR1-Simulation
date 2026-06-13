@@ -7,11 +7,21 @@ project(lmr1_description)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
 find_package(catkin REQUIRED COMPONENTS
-  joint_state_publisher
-  robot_state_publisher
   rospy
   std_msgs
+  xacro
+  joint_state_publisher
+  joint_state_publisher_gui
+  robot_state_publisher
+  rviz
+  gazebo_ros
+  teleop_twist_keyboard
+  gmapping
+  amcl
+  map_server
+  move_base
 )
 
 ## System dependencies are found with CMake's conventions
