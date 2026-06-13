@@ -4,14 +4,14 @@
         default="$(find lmr1_description)/rviz/config.rviz"/>
 
   <!-- ========================================================== -->
-  <!-- Robot Description                                           -->
+  <!-- Robot Description                                          -->
   <!-- ========================================================== -->
 
   <param name="robot_description"
         command="$(find xacro)/xacro $(find lmr1_description)/urdf/robot.urdf.xacro"/>
 
   <!-- ========================================================== -->
-  <!-- State Publishers                                            -->
+  <!-- State Publishers                                           -->
   <!-- ========================================================== -->
 
   <node name="joint_state_publisher_gui"
@@ -23,7 +23,7 @@
         type="robot_state_publisher"/>
 
   <!-- ========================================================== -->
-  <!-- Visualization                                               -->
+  <!-- Visualization                                              -->
   <!-- ========================================================== -->
 
   <node name="rviz"
