@@ -100,7 +100,7 @@ To spawn the LMR1 robot in Gazebo using the default TurtleBot world, launch `gaz
 $ roslaunch lmr1_description gazebo.launch
 ```
 
-##### 🗺️ GMapping SLAM Implementation
+##### 🗺️ SLAM Implementation
 
 <table>
 <tr>
@@ -108,12 +108,16 @@ $ roslaunch lmr1_description gazebo.launch
 
 <div align="justify">
   
-You can run `gmapping_slam.launch` to demonstrate the GMapping SLAM algorithm using the LMR1 robot within the TurtleBot world environment.
+You can run `gmapping.launch` or `hector.launch` to demonstrate the GMapping and Hector SLAM algorithms, respectively.
 
 </div>
 
 ```bash
 $ roslaunch lmr1_description gmapping.launch
+```
+
+```bash
+$ roslaunch lmr1_description hector.launch
 ```
 
 </td>
