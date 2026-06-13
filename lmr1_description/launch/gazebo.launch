@@ -1,41 +1,101 @@
 <launch>
 
-  <!-- ============================= -->
-  <!-- Load robot description -->
-  <!-- ============================= -->
+  <!-- ========================================================== -->
+  <!-- Launch Arguments                                           -->
+  <!-- ========================================================== -->
+
+  <!-- Namespace -->
+  <arg name="robot_name" default="lmr1"/>
+  <arg name="namespace" default="$(arg robot_name)"/>
+
+  <!-- Simulation world -->
+  <arg name="world_name"
+       default="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
+
+  <!-- Initial robot pose -->
+  <arg name="x_pos" default="0.5"/>
+  <arg name="y_pos" default="0.5"/>
+  <arg name="z_pos" default="0.05"/>
+  <arg name="yaw"   default="0.0"/>
+
+  <!-- Optional tools -->
+  <arg name="enable_teleop" default="false"/>
+  <arg name="enable_visualization" default="false"/>
+
+  <!-- ========================================================== -->
+  <!-- Robot Description                                          -->
+  <!-- ========================================================== -->
+
   <param name="robot_description"
          command="$(find xacro)/xacro $(find lmr1_description)/urdf/robot.urdf.xacro"/>
 
-  <!-- ============================= -->
-  <!-- Gazebo TurtleBot World -->
-  <!-- ============================= -->
+  <!-- ========================================================== -->
+  <!-- Gazebo Simulation                                          -->
+  <!-- ========================================================== -->
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
 
-    <arg name="world_name"
-         value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
-
-    <arg name="paused" value="false"/>
+    <arg name="world_name"   value="$(arg world_name)"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
-    <arg name="debug" value="false"/>
+    <arg name="gui"          value="true"/>
+    <arg name="debug"        value="false"/>
 
   </include>
 
-  <!-- ============================= -->
-  <!-- Spawn robot into Gazebo -->
-  <!-- ============================= -->
+  <!-- ========================================================== -->
+  <!-- Robot Spawn                                                -->
+  <!-- ========================================================== -->
+
   <node name="spawn_urdf"
         pkg="gazebo_ros"
         type="spawn_model"
-        args="-urdf -model lmr1 -param robot_description -x 0.5 -y 0.5 -z 0.05"
-        output="screen"/>
+        output="screen"
+        args="-urdf
+              -model lmr1
+              -param robot_description
+              -x $(arg x_pos)
+              -y $(arg y_pos)
+              -z $(arg z_pos)
+              -Y $(arg yaw)"/>
 
-  <!-- ============================= -->
-  <!-- Robot State Publisher -->
-  <!-- ============================= -->
+  <!-- ========================================================== -->
+  <!-- Robot State Publisher                                      -->
+  <!-- ========================================================== -->
+
   <node name="robot_state_publisher"
         pkg="robot_state_publisher"
         type="robot_state_publisher"/>
+
+  <!-- ========================================================== -->
+  <!-- RViz                                                       -->
+  <!-- ========================================================== -->
+
+  <group if="$(arg enable_visualization)">
+
+    <node name="rviz"
+          pkg="rviz"
+          type="rviz"
+          output="screen"
+          args="-d $(find lmr1_description)/rviz/gazebo_config.rviz"/>
+
+  </group>
+
+  <!-- ========================================================== -->
+  <!-- Optional: Keyboard Teleoperation                           -->
+  <!-- ========================================================== -->
+
+  <group if="$(arg enable_teleop)">
+
+    <node name="teleop_twist_keyboard"
+          pkg="teleop_twist_keyboard"
+          type="teleop_twist_keyboard.py"
+          output="screen"
+          launch-prefix="xterm -fa 'Monospace' -fs 12 -e">
+
+      <remap from="cmd_vel" to="/$(arg namespace)/cmd_vel"/>
+
+    </node>
+
+  </group>
 
 </launch>
