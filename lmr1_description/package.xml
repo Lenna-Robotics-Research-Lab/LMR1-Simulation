@@ -2,7 +2,7 @@
 <package format="2">
 
   <name>lmr1_description</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <description>
     Robot description, simulation, visualization, SLAM, localization,
@@ -10,7 +10,6 @@
   </description>
 
   <maintainer email="erf.riazati@gmail.com">Erfan Riazati</maintainer>
-
   <author email="erf.riazati@gmail.com">Erfan Riazati</author>
 
   <license>GPLv3</license>
